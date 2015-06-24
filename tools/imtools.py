@@ -59,7 +59,7 @@ def generate_folder(p="../data/"):
 #generate_pose_folder()
 
 
-def eqImg(im):
+def equalize_image(im):
     """
     Histogram equalization.
     Input: 
@@ -79,7 +79,7 @@ def eqImg(im):
     cdf = np.ma.filled(cdf_m,0).astype('uint8')
     im = cdf[im]
     return im
-#eqImg
+#equalize_image
 
 
 def timeEvent(t=2,d=2):
