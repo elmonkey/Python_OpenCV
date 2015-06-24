@@ -28,11 +28,12 @@ def get_imlist(path, ext = ".png"):
 #get_imlist
 
 def get_nat_list(path, name="file", ext = ".txt"):
-    """ Returns a list of PATHS for all fils w the given sub-strings
+    """ 
+    Returns a list of PATHS for all fils w the given sub-strings
     in NATURAL ORDER located in the given path.
-    usage:
-    for folder with files named: [filename0.txt, filename1.txt,... ,filenameN.txt]
-    files = get_nat_list('../root/data/', 'filename','.txt') 
+    Usage:
+        Folder with files named: [filename0.txt, filename1.txt,... ,filenameN.txt]
+        files = get_nat_list('../root/data/', 'filename','.txt') 
     (str,str,str) -> (list)
     """
     # list of paths:
@@ -50,7 +51,9 @@ def get_nat_list(path, name="file", ext = ".txt"):
 
 
 def generate_folder(p="../data/"):
-    """Checks if a path p exists, else generates it"""
+    """
+    Checks if a path/directory p exists and generates the directory if it does not exist.
+    """
     if os.path.isdir(p): # if the path exists check w user b4 rewritting
         print "Folder {} already exists!".format(p)
     else: # file doesnt exist. Create the folder!
@@ -83,10 +86,13 @@ def equalize_image(im):
 
 
 def timeEvent(t=2,d=2):
-    """Creates a variable pause based on the time at which the function was 
-    called. For example, function called at 1:13:50 with minute_tick: t=2 and 
+    """
+    Creates a variable pause based on the time at which the function was 
+    called. 
+    For example, function called at 1:13:50 with minute_tick: t=2 and 
     minute_delay: d=2 will pause until 1:16:00. Which is the next minute_tick 
-    that meets the factors of t=2 condition and the minute_delay > 2 (d=2)"""
+    that meets the factors of t=2 condition and the minute_delay > 2 (d=2)
+    """
     from time import localtime#, gmtime, strftime
 #     x = strftime("%a, %d %b %Y %H:%M:%S:%s", gmtime())
     c = localtime() # struct
