@@ -1,4 +1,4 @@
-def draw_blocks(image, n=6):
+def drawblocks(image, n=6):
     """
     Draws lines on the perimeter and over the n x n blocks. cv2 uses backwards coords
             (0,0)______(w,0)
@@ -11,7 +11,7 @@ def draw_blocks(image, n=6):
     input: 
         image = 1L or 3L numpy array, uint8 [0,255]
         n = block dimensions (n x n). For example, n=6 -> 6x6 = 36 blocks 
-    output: image with the blocks 
+    output: image with grid dron on it 
     
     """
     # Colors
@@ -26,7 +26,7 @@ def draw_blocks(image, n=6):
         
     h,w=im.shape[:2]
     
-    # DRAW Perimeter lines                                       
+    # DRAW Perimeter                                      
     cv2.line(im, (0,0), (w-1,0),     green, thickness=4) # top  __
     cv2.line(im, (0,0), (0,h-1),     green, thickness=4) # left |
     cv2.line(im, (0,h-1), (w-1,h-1), green, thickness=4) # bottom __
