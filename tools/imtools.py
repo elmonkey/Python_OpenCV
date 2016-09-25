@@ -230,7 +230,7 @@ def depth2gray(im):
     with range [0 255].
     (1L uint16 ndarray) -> (1L uint8 ndarray, 3L uint8 ndarray)
     """
-    im  = im.astype(float)/(2**13 -1).astype(np.uint8)
+    im  = im.astype(float)/(2**12 -1).astype(np.uint8)
     d4d = np.dstack((im, im ,im)) # 3L image for display
     return im
 #depth2gray
